@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EducaTech | Excelência em Ensino</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="verificarSessao()">
+
+    <!-- Menu Superior Único -->
+    <nav>
+        <div class="logo">EducaTech</div>
+        <div class="menu" id="nav-menu">
+            <a href="index.html">Início</a>
+            <!-- Links que aparecem para todos -->
+            <div id="auth-links" style="display: inline;">
+                <a href="login.html" class="btn-login">Entrar</a>
+                <a href="cadastro.html" class="btn-cadastrar">Cadastrar</a>
+            </div>
+           
+            <div id="user-links" class="hidden" style="display: inline;">
+                <span id="nome-usuario"></span>
+                <a href="#" onclick="logout()" class="btn-logout">Sair</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 id="welcome-msg">Aprenda as habilidades do amanhã</h1>
+            <p>Cursos práticos de Programação, Inglês e Redes.</p>
+            
+            
+            <div id="hero-action">
+                <a href="cadastro.html" class="cta-button" id="main-btn">Criar Conta Grátis</a>
+            </div>
+        </div>
+    </header>
+    
+    <script>
+        function verificarSessao() {
+            const usuarioLogado = localStorage.getItem('usuario_nome');
+            
+            const authLinks = document.getElementById('auth-links');
+            const userLinks = document.getElementById('user-links');
+            const nomeExibicao = document.getElementById('nome-usuario');
+            const welcomeMsg = document.getElementById('welcome-msg');
+            const mainBtn = document.getElementById('main-btn');
+    
+            if (usuarioLogado) {
+                // Se logado: Esconde Login/Cadastrar, mostra Nome/Sair
+                authLinks.classList.add('hidden');
+                userLinks.classList.remove('hidden');
+                
+                nomeExibicao.innerText = "Olá, " + usuarioLogado;
+                welcomeMsg.innerText = "Bom ver você de volta, " + usuarioLogado + "!";
+                
+                // Altera o botão do Hero para quem já é aluno
+                mainBtn.innerText = "Continuar Meus Cursos";
+                mainBtn.href = "#cursos"; 
+            }
+        }
+    
+        function logout() {
+            localStorage.removeItem('usuario_nome');
+            // Opcional: chamar um script PHP de logout aqui para limpar a $_SESSION no servidor
+            window.location.reload();
+        }
+    </script>
+     </div>
+    </header>
+
+    <div class="course-grid">
+        <!-- Card Programação -->
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Programação">
+            </div>
+            <div class="course-content">
+                <h3>Programação</h3>
+                <p>Desenvolvimento Web, Python e lógica de programação.</p>
+                
+            </div>
+        </div>
+    
+        <!-- Card Inglês -->
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://images.unsplash.com/photo-1543165796-5426273eaab3?auto=format&fit=crop&w=600&q=80" alt="Inglês">
+            </div>
+            <div class="course-content">
+                <h3>Inglês Técnico</h3>
+                <p>Focado na área de TI e conversação corporativa.</p>
+                
+            </div>
+        </div>
+    
+        <!-- Card Redes -->
+        <div class="course-card">
+            <div class="course-image">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop" alt="Redes de Computadores">
+            </div>
+            <div class="course-content">
+                <h3>Redes & Infra</h3>
+                <p>Configuração de servidores, CISCO e segurança.</p>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script de Controle de Sessão -->
+    <script>
+        function verificarSessao() {
+            // Simulando a verificação de login (no PHP você enviaria isso via JSON ou Cookies)
+            const usuarioLogado = localStorage.getItem('usuario_nome');
+            
+            const authLinks = document.getElementById('auth-links');
+            const userLinks = document.getElementById('user-links');
+            const nomeExibicao = document.getElementById('nome-usuario');
+            const welcomeMsg = document.getElementById('welcome-msg');
+            const heroAction = document.getElementById('hero-action');
+
+            if (usuarioLogado) {
+                authLinks.classList.add('hidden');
+                userLinks.classList.remove('hidden');
+                nomeExibicao.innerText = "Olá, " + usuarioLogado;
+                welcomeMsg.innerText = "Pronto para continuar, " + usuarioLogado + "?";
+                heroAction.innerHTML = '<a href="#cursos" class="cta-button">Meus Cursos</a>';
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('usuario_nome');
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
