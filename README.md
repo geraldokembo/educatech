@@ -14,19 +14,20 @@ O **EducaTech** é uma solução digital focada em descentralizar e otimizar o a
 * **Ambiente de Desenvolvimento:** XAMPP (Apache / PHP / phpMyAdmin)
 
 ---
-
 ## ✨ Funcionalidades Principais
 * **Controlo de Acessos Baseado em Papéis (RBAC):**
-  * Diferenciação automática entre *Alunos* e *Professores/Administradores* através de um sistema de Código de Convite seguro.
-* **Autenticação Segura:**
-  * Gestão de sessões (`session_start()`), encriptação e validação de credenciais.
+  * Diferenciação automática entre *Alunos* e *Professores/Administradores* através de um sistema de papéis e sessões seguras.
+* **Autenticação e Segurança de Sessão:**
+  * Gestão de sessões (`session_start()`), validação de credenciais e guardas de rota rigorosas.
 * **Experiência do Utilizador (UX/UI) Fluida:**
-  * Sistema unificado de feedback visual com alertas dinâmicos de sucesso e erro e fecho automático via JavaScript.
+  * Interface moderna em modo escuro na área de aulas, com navegação intuitiva por playlists e acompanhamento de progresso em tempo real.
 * **Exploração Inteligente de Cursos:**
   * Listagem dinâmica baseada em consultas SQL otimizadas (`NOT IN` subqueries) para ocultar cursos onde o aluno já se encontra matriculado.
-* **Sistema de Matrículas:**
-  * Fluxo automatizado de inscrição de alunos em formações específicas.
-
+* **🔒 Segurança Avançada e Proteção de Conteúdo (Anti-Pirataria):**
+  * **Marca d'Água Dinâmica por Sessão:** Injeção automatizada via PHP de uma grelha translúcida com o nome e o ID único do aluno sobre a página de aulas, dissuasão forte contra capturas e partilhas não autorizadas.
+  * **Restrições de Contexto:** Bloqueio de clique direito, atalhos de gravação/impressão (`F12`, `Ctrl+P`, `Ctrl+S`, `Ctrl+U`) e desativação da seleção de texto.
+* **Interação Pedagógica:**
+  * Sistema integrado de envio de dúvidas por aula e respetiva resposta por parte do professor.
 ---
 
 ## 📂 Estrutura de Ficheiros (Principais)
