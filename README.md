@@ -1,0 +1,89 @@
+
+EducaTech 📚
+Plataforma web de gestão educacional e e-learning desenvolvida como MVP para o **LISPA 2026**.
+
+🚀 Sobre o Projeto
+O **EducaTech** é uma solução digital focada em descentralizar e otimizar o acesso à educação. A plataforma conecta alunos a conteúdos formativos de qualidade, proporcionando ao mesmo tempo um painel de controlo robusto para professores e administradores gerirem cursos e matrículas.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+* **Backend:** PHP (Gestão de sessões e lógica de negócio)
+* **Base de Dados:** MySQL / MySQLi (Relacional)
+* **Frontend:** HTML5, CSS3 (Flexbox & CSS Grid), JavaScript (Manipulação de DOM e timeouts)
+* **Ambiente de Desenvolvimento:** XAMPP (Apache / PHP / phpMyAdmin)
+
+---
+
+## ✨ Funcionalidades Principais
+* **Controlo de Acessos Baseado em Papéis (RBAC):**
+  * Diferenciação automática entre *Alunos* e *Professores/Administradores* através de um sistema de Código de Convite seguro.
+* **Autenticação Segura:**
+  * Gestão de sessões (`session_start()`), encriptação e validação de credenciais.
+* **Experiência do Utilizador (UX/UI) Fluida:**
+  * Sistema unificado de feedback visual com alertas dinâmicos de sucesso e erro e fecho automático via JavaScript.
+* **Exploração Inteligente de Cursos:**
+  * Listagem dinâmica baseada em consultas SQL otimizadas (`NOT IN` subqueries) para ocultar cursos onde o aluno já se encontra matriculado.
+* **Sistema de Matrículas:**
+  * Fluxo automatizado de inscrição de alunos em formações específicas.
+
+---
+
+## 📂 Estrutura de Ficheiros (Principais)
+```text
+/educatech
+│
+├── conexao.php             # Conexão centralizada com a base de dados MySQL
+├── logar.php               # Processamento de login e interface unificada de autenticação
+├── cadastrar.php           # Registo de novos utilizadores com validação de papéis
+├── dashboard.php           # Painel principal do aluno
+├── dashboard_professor.php # Painel de controlo restrito para docentes
+├── explorar.php            # Vitrine de cursos disponíveis com filtro de matrículas
+├── inscrever.php           # Lógica de processamento de inscrições
+├── meus_cursos.php         # Gestão de cursos matriculados pelo aluno
+└── assets/                 # Folhas de estilo, imagens e recursos estáticos
+
+```
+
+---
+
+## ⚙️ Como Executar o Projeto Localmente
+
+1. **Pré-requisitos:**
+* Certifica-te de que tens o **XAMPP** (ou ambiente PHP/MySQL similar) instalado no teu computador.
+
+
+2. **Clonar ou Colocar o Repositório:**
+* Coloca a pasta do projeto dentro do diretório raiz do teu servidor local (ex: `htdocs` no XAMPP).
+
+
+3. **Configurar a Base de Dados:**
+* Abre o **phpMyAdmin** (`http://localhost/phpmyadmin`).
+* Cria uma base de dados (ex: `educatech_db`).
+* Importa as tabelas necessárias (`usuarios`, `cursos`, `inscricoes`).
+
+
+4. **Configurar a Conexão:**
+* Abre o ficheiro `conexao.php` e confirma se os teus parâmetros de acesso ao MySQL estão corretos (por defeito: `localhost`, `root`, sem password).
+
+
+5. **Aceder à Aplicação:**
+* Abre o navegador e acede a:
+`http://localhost/educatech/logar.php`
+
+
+
+---
+
+## 💡 Próximos Passos do MVP
+
+* [ ] Implementação de upload de conteúdos em vídeo pelos professores.
+* [ ] Sistema de recuperação de palavra-passe.
+* [ ] Emissão de certificados de conclusão de curso.
+
+---
+
+## 🛡️ Licença
+
+Desenvolvido por **Geraldo Kembo** . Todos os direitos reservados.
+
