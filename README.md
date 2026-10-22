@@ -1,6 +1,6 @@
 
 EducaTech 📚
-Plataforma web de gestão educacional e e-learning desenvolvida como MVP para o **LISPA 2026**.
+Plataforma web de gestão educacional e e-learning desenvolvida como MVP.
 
 🚀 Sobre o Projeto
 O **EducaTech** é uma solução digital focada em descentralizar e otimizar o acesso à educação. A plataforma conecta alunos a conteúdos formativos de qualidade, proporcionando ao mesmo tempo um painel de controlo robusto para professores e administradores gerirem cursos e matrículas.
